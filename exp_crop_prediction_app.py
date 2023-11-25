@@ -9,8 +9,9 @@ import gdown
 
 
 # Provide the Google Drive file ID for your model file
-file_id = '1wBX1fJbpQMpBGPfLLaLSHIcUGGq5RTQv'
-model_url = f'https://drive.google.com/uc?id={file_id}'
+#file_id = '1wBX1fJbpQMpBGPfLLaLSHIcUGGq5RTQv'
+#model_url = f'https://drive.google.com/uc?id={file_id}'
+model_url = f'https://drive.google.com/uc?id=1wBX1fJbpQMpBGPfLLaLSHIcUGGq5RTQv'
 
 # Download the model file
 output = 'crop_production_model.joblib'
