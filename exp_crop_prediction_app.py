@@ -2,9 +2,33 @@ import streamlit as st
 import numpy as np
 import joblib
 import pandas as pd
+import gdown
 
 # Loading the trained model and label encoders
-model = joblib.load("https://drive.google.com/file/d/1wBX1fJbpQMpBGPfLLaLSHIcUGGq5RTQv/view?usp=drive_link/crop_production_model.joblib")
+#model = joblib.load("https://drive.google.com/file/d/1wBX1fJbpQMpBGPfLLaLSHIcUGGq5RTQv/view?usp=drive_link/crop_production_model.joblib")
+
+
+# Provide the Google Drive file ID for your model file
+file_id = '1wBX1fJbpQMpBGPfLLaLSHIcUGGq5RTQv'
+model_url = f'https://drive.google.com/uc?id={file_id}'
+
+# Download the model file
+output = 'crop_production_model.joblib'
+gdown.download(model_url, output, quiet=False)
+
+# Load the model from the downloaded file
+model = joblib.load(output)
+
+
+
+
+
+
+
+
+
+
+
 label_encoders = {
     'le_State_Name': joblib.load("le_State_Name.joblib"),
     'le_District_Name': joblib.load("le_District_Name.joblib"),
