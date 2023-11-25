@@ -4,7 +4,7 @@ import joblib
 import pandas as pd
 
 # Loading the trained model and label encoders
-model = joblib.load("crop_production_model.joblib")
+model = joblib.load("https://drive.google.com/file/d/1wBX1fJbpQMpBGPfLLaLSHIcUGGq5RTQv/view?usp=drive_link")
 label_encoders = {
     'le_State_Name': joblib.load("le_State_Name.joblib"),
     'le_District_Name': joblib.load("le_District_Name.joblib"),
@@ -32,7 +32,7 @@ def predict_production(state, district, year, season, crop, area):
 st.title("Crop Production Prediction App")
 
 # Loading the dataset for dropdown options
-df = pd.read_csv("C:/Users/user/Informatics/Project/crop_production.csv")
+df = pd.read_csv("crop_production.csv")
 
 state_counts= df['State_Name'].value_counts()
 # removing states with value counts less than 1000
