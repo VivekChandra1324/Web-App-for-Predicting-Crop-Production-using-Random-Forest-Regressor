@@ -4,7 +4,7 @@ import joblib
 import pandas as pd
 
 # Loading the trained model and label encoders
-model = joblib.load("https://drive.google.com/file/d/1wBX1fJbpQMpBGPfLLaLSHIcUGGq5RTQv/view?usp=drive_link")
+model = joblib.load("https://drive.google.com/file/d/1wBX1fJbpQMpBGPfLLaLSHIcUGGq5RTQv/view?usp=drive_link/crop_production_model.joblib")
 label_encoders = {
     'le_State_Name': joblib.load("le_State_Name.joblib"),
     'le_District_Name': joblib.load("le_District_Name.joblib"),
