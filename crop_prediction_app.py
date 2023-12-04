@@ -14,6 +14,7 @@ gdown.download(model_url, output, quiet=False)
 # Loading the model from the downloaded file
 model = joblib.load(output)
 
+# Loading the label encoders
 label_encoders = {
     'le_State_Name': joblib.load("le_State_Name.joblib"),
     'le_District_Name': joblib.load("le_District_Name.joblib"),
@@ -32,15 +33,13 @@ def predict_production(state, district, year, season, crop, area):
     # Making predictions using the loaded model
     input_data = np.array([[state_encoded, district_encoded, year, season_encoded, crop_encoded, area]])
     input_data = input_data.astype(float)
-
     prediction = model.predict(input_data)
-
     return prediction[0]
 
 # Streamlit app layout
 st.title("Crop Production Prediction App")
 
-# Loading the dataset for dropdown options
+# Loading the dataset 
 df = pd.read_csv("crop_production.csv")
 
 # Taking input from the user
@@ -58,7 +57,7 @@ season = st.selectbox("Select Season", filtered_seasons)
 filtered_crops = df[(df['State_Name'] == state) & (df['District_Name'] == district) & (df['Season'] == season)]['Crop'].unique()
 crop = st.selectbox("Select Crop", filtered_crops)
 
-# Allow the user to input any year and area
+# Allowing the user to input any year and area
 year = st.number_input("Enter Year", min_value=int(df['Crop_Year'].min()), value=int(df['Crop_Year'].median()))
 area = st.number_input("Enter Area", min_value=float(df['Area'].min()), value=float(df['Area'].median()))
 
