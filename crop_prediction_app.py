@@ -40,7 +40,7 @@ def predict_production(state, district, year, season, crop, area):
 # Streamlit app layout
 st.title("Crop Production Prediction App")
 
-# Loading the dataset for dropdown options
+# Loading the dataset
 df = pd.read_csv("crop_production.csv")
 
 # Taking input from the user
