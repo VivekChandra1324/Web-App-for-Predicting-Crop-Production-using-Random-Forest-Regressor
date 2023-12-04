@@ -44,19 +44,19 @@ st.title("Crop Production Prediction App")
 df = pd.read_csv("crop_production.csv")
 
 # Taking input from the user
-state = st.selectbox("Select State", df['State_Name'].unique())
+state = st.selectbox("Select State", [""] + list(df['State_Name'].unique()))
 
 # Filter districts based on the selected state
-filtered_districts = df[df['State_Name'] == state]['District_Name'].unique()
-district = st.selectbox("Select District", filtered_districts)
+filtered_districts = df[df['State_Name'] == state]['District_Name'].unique() if state else []
+district = st.selectbox("Select District", [""] + list(filtered_districts))
 
 # Filter seasons based on the selected state and district
-filtered_seasons = df[(df['State_Name'] == state) & (df['District_Name'] == district)]['Season'].unique()
-season = st.selectbox("Select Season", filtered_seasons)
+filtered_seasons = df[(df['State_Name'] == state) & (df['District_Name'] == district)]['Season'].unique() if state and district else []
+season = st.selectbox("Select Season", [""] + list(filtered_seasons))
 
 # Filter crops based on the selected state, district, and season
-filtered_crops = df[(df['State_Name'] == state) & (df['District_Name'] == district) & (df['Season'] == season)]['Crop'].unique()
-crop = st.selectbox("Select Crop", filtered_crops)
+filtered_crops = df[(df['State_Name'] == state) & (df['District_Name'] == district) & (df['Season'] == season)]['Crop'].unique() if state and district and season else []
+crop = st.selectbox("Select Crop", [""] + list(filtered_crops))
 
 # Allow the user to input any year and area
 year = st.number_input("Enter Year", min_value=int(df['Crop_Year'].min()), value=int(df['Crop_Year'].median()))
