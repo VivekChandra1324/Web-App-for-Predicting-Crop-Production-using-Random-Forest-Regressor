@@ -24,7 +24,7 @@ Firstly, I removed the rows that had missing information to ensure all remaining
 
 Secondly, I deleted repeating data entries to keep the dataset consistent and avoid duplication.
 
-Thirdly, I excluded data that had too few instances because scarcity in training data may lead to inaccurate predictions.
+Following that, I excluded data that had too few instances because scarcity in training data may lead to inaccurate predictions.
 
 Finally, I converted categorical values in the data to numbers so that the predictive model could understand and process them.
 
