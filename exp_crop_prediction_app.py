@@ -75,12 +75,13 @@ df = df[df['Season'].isin(season_counts[season_counts >= 1000].index)]
 state = st.selectbox("Select State", df['State_Name'].unique())
 filtered_districts = df[df['State_Name'] == state]['District_Name'].unique()
 district = st.selectbox("Select District", filtered_districts)
-filtered_crops = df[df['District_Name'] == district]['Crop'].unique()
-crop = st.selectbox("Select Crop", filtered_crops)
 
 # Filtering seasons based on the selected district and crop
 filtered_seasons = df[(df['District_Name'] == district) & (df['Crop'] == crop)]['Season'].unique()
 season = st.selectbox("Select Season", filtered_seasons)
+
+filtered_crops = df[df['District_Name'] == district]['Crop'].unique()
+crop = st.selectbox("Select Crop", filtered_crops)
 
 # Allowing the user to input any year and area
 year = st.number_input("Enter Year", min_value=int(df['Crop_Year'].min()), value=int(df['Crop_Year'].median()))
