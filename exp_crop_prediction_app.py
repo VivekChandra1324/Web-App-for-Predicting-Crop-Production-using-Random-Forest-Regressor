@@ -14,7 +14,6 @@ gdown.download(model_url, output, quiet=False)
 # Loading the model from the downloaded file
 model = joblib.load(output)
 
-# Loading the label encoder files
 label_encoders = {
     'le_State_Name': joblib.load("le_State_Name.joblib"),
     'le_District_Name': joblib.load("le_District_Name.joblib"),
@@ -33,15 +32,16 @@ def predict_production(state, district, year, season, crop, area):
     # Making predictions using the loaded model
     input_data = np.array([[state_encoded, district_encoded, year, season_encoded, crop_encoded, area]])
     input_data = input_data.astype(float)
-    prediction = model.predict(input_data)
-    return prediction[0]
 
+    prediction = model.predict(input_data)
+
+    return prediction[0]
 
 # Streamlit app layout
 st.title("Crop Production Prediction App")
 
 # Loading the dataset for dropdown options
-df = pd.read_csv("C:/Users/user/Informatics/Project/crop_production.csv")
+#df = pd.read_csv("C:/Users/user/Informatics/Project/crop_production.csv")
 
 # Taking input from the user
 state = st.selectbox("Select State", df['State_Name'].unique())
