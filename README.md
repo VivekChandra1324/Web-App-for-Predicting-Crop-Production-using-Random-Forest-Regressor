@@ -30,24 +30,6 @@ Finally, I converted categorical values in the data to numbers so that the predi
 
 ## Algorithm Description:
 
-The algorithm driving the crop production prediction is  **RandomForestRegressor**, a powerful ensemble machine-learning model from the sci-kit-learn library. This model was chosen for its ability to handle non-linear relationships and its robustness against overfitting. It operates by constructing a multitude of decision trees at training time and outputting the mean prediction of the individual trees. The model was trained on the cleaned dataset and evaluated using the R^2 score to measure its performance. The final model is capable of making predictions based on encoded inputs for state, district, year, season, crop, and area.
-
-
-The training process involved the following steps:
-
-Splitting the dataset into training and test sets is a common practice to evaluate the performance of a machine learning model on unseen data.
-
-Initializing the RandomForestRegressor with a set random state for reproducibility.
-
-
-Fitting the model on the training data to allow the algorithm to learn from the features and their relationship to the target variable, which is the crop production in this case.
-
-After training, the model's performance is evaluated on the test set using metrics such as the R^2 score, which provides a measure of how well future samples are likely to be predicted by the model.
-
-The RandomForestRegressor is particularly well-suited for this task due to its ability to handle large datasets with multiple features and its robustness to overfitting, which is a common problem in complex models. Furthermore, by averaging over many trees, the random forest tends to improve the predictive accuracy and control over-fitting, which makes it a strong performer for regression tasks.
-
-## Algorithm Description:
-
 The crop production prediction algorithm is powered by the **RandomForestRegressor**, a powerful ensemble machine-learning model available in the sci-kit-learn library. This model was specifically chosen for its ability to handle non-linear relationships and its robustness against overfitting. The algorithm operates by constructing numerous decision trees during training and subsequently averaging the predictions of these individual trees. The training process involved the following hierarchical steps:
 
 1. **Data Splitting:**
