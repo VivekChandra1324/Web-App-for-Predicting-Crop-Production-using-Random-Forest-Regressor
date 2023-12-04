@@ -6,8 +6,8 @@ import joblib
 import pandas as pd
 import gdown
 
-# Acessing and Downloading the model from the google drive
-model_url = f'https://drive.google.com/uc?id=1wBX1fJbpQMpBGPfLLaLSHIcUGGq5RTQv'
+# Accessing and Downloading the model from the google drive
+model_url = f'https://drive.google.com/uc?id=1ANCwS3prrYEVXSloDSxvnRL1qcuIj3Xb'
 output = 'crop_production_model.joblib'
 gdown.download(model_url, output, quiet=False)
 
