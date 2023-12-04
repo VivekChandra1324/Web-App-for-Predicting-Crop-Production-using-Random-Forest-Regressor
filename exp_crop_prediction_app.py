@@ -41,7 +41,7 @@ def predict_production(state, district, year, season, crop, area):
 st.title("Crop Production Prediction App")
 
 # Loading the dataset for dropdown options
-#df = pd.read_csv("C:/Users/user/Informatics/Project/crop_production.csv")
+#df = pd.read_csv("crop_production.csv")
 
 # Taking input from the user
 state = st.selectbox("Select State", df['State_Name'].unique())
