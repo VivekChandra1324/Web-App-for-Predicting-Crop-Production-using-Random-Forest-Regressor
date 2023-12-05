@@ -45,7 +45,7 @@ The crop production prediction algorithm is powered by the **RandomForestRegress
    - Following training, the model's performance was evaluated on the test set using metrics such as the R^2 score. This score provides a measure of how well the model is likely to predict future samples.
 
 The final trained model is proficient in making predictions based on encoded inputs representing state, district, year, season, crop, and area. 
-## Tools Used:
+## Tools and Libraries Used:
 Streamlit: Used for building and sharing the web app for the crop production prediction model, providing a user-friendly interface for input selection and displaying predictions.
 
 Pandas: Employed for data manipulation and cleaning in the Python script, allowing us to organize and prepare the dataset for the model.
