@@ -7,7 +7,7 @@ import pandas as pd
 import gdown
 
 # Accessing and Downloading the model from the google drive
-model_url = f'https://drive.google.com/uc?id=1ANCwS3prrYEVXSloDSxvnRL1qcuIj3Xb'
+model_url = f'https://drive.google.com/uc?id=15BgVgFHBdB6XZ38dgRzhq3qh2mULAhQE'
 output = 'crop_production_model.joblib'
 gdown.download(model_url, output, quiet=False)
 
